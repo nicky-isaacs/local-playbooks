@@ -1,0 +1,15 @@
+---
+- name: install misc packages
+  homebrew: name={{item}} state=latest
+  with_items:
+    - cloc
+    - direnv
+    - dos2unix
+    - hub
+    - readline
+    - sl
+    - thefuck
+    - tig
+    - tmux
+    - tree
+    - wget
