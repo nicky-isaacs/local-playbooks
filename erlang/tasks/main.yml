@@ -1,0 +1,3 @@
+---
+- name: install erlang
+  homebrew: name=erlang state=latest
