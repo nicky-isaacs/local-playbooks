@@ -1,0 +1,26 @@
+---
+- name: install vimrc
+  copy: src=vimrc dest=~/.vimrc
+
+- name: install vim directories
+  file: path={{item}} state=directory recurse=yes
+  with_items:
+    - ~/.vim/autoload
+    - ~/.vim/bundle
+
+- name: install pathogen autoload
+  copy: src=pathogen.vim dest=~/.vim/autoload/pathogen.vim
+
+- name: install vim bundles
+  git: repo={{item.repo}} dest={{item.dest}} update=yes
+  with_items:
+    - { repo: "https://github.com/tpope/vim-fugitive.git", dest: "~/.vim/bundle/fugitive" }
+    - { repo: "https://github.com/vim-ruby/vim-ruby.git", dest: "~/.vim/bundle/ruby" }
+    - { repo: "https://github.com/altercation/vim-colors-solarized.git", dest: "~/.vim/bundle/colors-solarized" }
+    - { repo: "https://github.com/tpope/vim-rails.git", dest: "~/.vim/bundle/rails" }
+    - { repo: "https://github.com/tpope/vim-surround.git", dest: "~/.vim/bundle/surround" }
+    - { repo: "https://github.com/vim-scripts/taglist.vim.git", dest: "~/.vim/bundle/taglist" }
+    - { repo: "https://github.com/tpope/vim-eunuch.git", dest: "~/.vim/bundle/eunuch" }
+    - { repo: "https://github.com/pangloss/vim-javascript.git", dest: "~/.vim/bundle/javascript" }
+    - { repo: "https://github.com/kchmck/vim-coffee-script.git", dest: "~/.vim/bundle/coffeescript" }
+    - { repo: "https://github.com/kien/ctrlp.vim.git", dest: "~/.vim/bundle/ctrlp" }
