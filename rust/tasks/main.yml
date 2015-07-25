@@ -1,3 +1,0 @@
----
-- name: install rust
-  homebrew: name=rust state=latest

@@ -1,9 +1,0 @@
----
-- name: install scala
-  homebrew: name=scala state=latest
-
-- name: install sbt
-  homebrew: name=sbt state=latest
-
-- name: install activator
-  homebrew: name=typesafe-activator state=latest

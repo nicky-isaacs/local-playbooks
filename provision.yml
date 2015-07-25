@@ -4,18 +4,8 @@
   connection: local
   roles:
     - ansible
-    - clojure
     - docker
-    - elixir
-    - erlang
     - git
-    - gradle
-    - groovy
-    - haskell
-    - java
-    - maven
+    - jvm
+    - languages
     - misc
-    - python
-    - ruby
-    - rust
-    - scala
