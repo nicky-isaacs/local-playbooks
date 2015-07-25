@@ -1,0 +1,3 @@
+---
+- name: install/update ansible
+  homebrew: name=ansible state=latest
