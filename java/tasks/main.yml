@@ -1,0 +1,21 @@
+---
+- name: tap caskroom/cask
+  homebrew_tap: name=caskroom/cask state=present
+
+- name: install brew-cask
+  homebrew: name=brew-cask state=latest update_homebrew=yes
+
+- name: tap caskroom/versions
+  homebrew_tap: name=caskroom/versions state=present
+
+- name: install java
+  homebrew_cask: name=java state=present
+
+- name: install java7
+  homebrew_cask: name=java7 state=present
+
+- name: make .zsh directory
+  file: path=~/.zsh state=directory recurse=yes
+
+- name: install java functions
+  copy: src=java.zsh dest=~/.zsh/java.zsh

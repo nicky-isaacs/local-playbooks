@@ -4,8 +4,13 @@
   connection: local
   roles:
     - ansible
+    - clojure
     - docker
     - git
+    - gradle
+    - groovy
+    - java
     - misc
     - python
     - ruby
+    - scala

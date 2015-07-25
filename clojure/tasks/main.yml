@@ -1,0 +1,3 @@
+---
+- name: install leiningen
+  homebrew: name=leiningen state=latest

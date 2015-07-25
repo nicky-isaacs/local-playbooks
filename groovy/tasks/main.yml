@@ -1,0 +1,6 @@
+---
+- name: install groovy
+  homebrew: name=groovy state=latest
+
+- name: install groovy config
+  copy: src=groovy.zsh dest=~/.zsh/groovy.zsh
