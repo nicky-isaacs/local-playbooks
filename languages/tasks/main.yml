@@ -46,7 +46,7 @@
   file: path=~/.zsh state=directory recurse=yes
 
 - name: install language profiles
-  file: src={{item.src}} dest={{item.dest}} state=file
+  copy: src={{item.src}} dest={{item.dest}}
   with_items:
     - { src: 'bundler.zsh', dest: '~/.zsh/bundler.zsh' }
     - { src: 'gem.zsh', dest: '~/.zsh/gem.zsh' }
