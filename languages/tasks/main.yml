@@ -45,10 +45,12 @@
 - name: setup .zsh directory
   file: path=~/.zsh state=directory recurse=yes
 
-- name: install language profiles
+- name: install language profile configurations
   copy: src={{item.src}} dest={{item.dest}}
   with_items:
     - { src: 'bundler.zsh', dest: '~/.zsh/bundler.zsh' }
     - { src: 'gem.zsh', dest: '~/.zsh/gem.zsh' }
     - { src: 'groovy.zsh', dest: '~/.zsh/groovy.zsh' }
     - { src: 'rbenv.zsh', dest: '~/.zsh/rbenv.zsh' }
+    - { src: 'gemrc', dest: '~/.gemrc' }
+    - { src: 'irbrc', dest: '~/.irbrc' }
