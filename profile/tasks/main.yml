@@ -1,0 +1,33 @@
+---
+- name: install shell configurations
+  copy: src={{item.src}} dest={{item.dest}}
+  with_items:
+    - { src: "zshrc", dest: "~/.zshrc" }
+    - { src: "zshenv", dest: "~/.zshenv" }
+    - { src: "bashrc", dest: "~/.bashrc" }
+    - { src: "bash_profile", dest: "~/.bash_profile" }
+
+- name: install misc packages
+  homebrew: name={{item}} state=latest
+  with_items:
+    - cloc
+    - direnv
+    - dos2unix
+    - editorconfig
+    - hub
+    - readline
+    - rename
+    - sl
+    - thefuck
+    - tig
+    - tmux
+    - tree
+    - wget
+
+- name: setup .zsh directory
+  file: path=~/.zsh state=directory recurse=yes
+
+- name: install profile configurations
+  copy: src={{item.src}} dest={{item.dest}}
+  with_items:
+    - { src: "editorconfig", dest: "~/.editorconfig" }

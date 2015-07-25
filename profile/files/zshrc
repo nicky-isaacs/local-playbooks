@@ -1,0 +1,66 @@
+# https://github.com/jcorbin/zsh-git
+setopt promptsubst
+autoload -U promptinit
+promptinit
+autoload -U colors && colors
+
+autoload -Uz compinit
+compinit
+
+export TERM='xterm-color'
+
+# just reset the fucking path so I know what's on it
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin
+
+export WORDCHARS='*?[]~&;!$%^<>'
+
+PROMPT=$'%{\e[1;30m%}%c%{\e[0m%} $(print_git_prompt)%{\e[1;30m%}☛ %{\e[0m%}'
+# PROMPT=$'$(print_git_prompt)%{\e[1;30m%}%c ☛ %{\e[0m%}'
+# RPROMPT=$'$(print_git_prompt)'
+
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=$HISTSIZE
+# from http://www.zsh.org/mla/users/2003/msg00335.html
+setopt    appendhistory
+setopt    extendedhistory
+setopt    histexpiredupsfirst
+unsetopt  histignorealldups
+setopt    histignoredups
+setopt    incappendhistory
+setopt    sharehistory
+
+alias ls='ls -G'
+alias ll='ls -lh'
+alias lla='ll -a'
+
+# Git aliases
+alias g='git'
+alias st='g st'
+alias l='g l'
+alias la='g la'
+alias lr='g lr'
+alias lar='g lar'
+alias co='g co'
+alias b='g b'
+
+alias c='clear'
+
+alias vs='vagrant global-status'
+
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
+# source /usr/local/etc/bash_completion.d/R
+source /usr/local/etc/bash_completion.d/cabal
+# source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+# source /usr/local/etc/bash_completion.d/hub.bash_completion.sh
+source /usr/local/etc/bash_completion.d/lein-completion.bash
+# source /usr/local/etc/bash_completion.d/npm
+# source /usr/local/etc/bash_completion.d/scala
+source /usr/local/etc/bash_completion.d/tig-completion.bash
+source /usr/local/etc/bash_completion.d/tmux
+
+# Load all the configs!
+for config_file ($HOME/.zsh/*.zsh) source $config_file
