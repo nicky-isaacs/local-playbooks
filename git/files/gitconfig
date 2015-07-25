@@ -1,0 +1,42 @@
+[user]
+  name='Jason'
+  email='jasonmichaelroth@gmail.com'
+[core]
+  excludesfile = ~/.gitignore
+  whitespace = trailing-space,space-before-tab
+  quotepath = false
+[apply]
+  whitespace = warn
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  ui = true
+[diff]
+  mnemonicprefix = true
+[alias]
+  b = branch
+  ru = remote update
+  co = checkout
+  cob = checkout -b
+  st = status --short --ignore-submodules
+  l = "git_pretty_log"
+  la = "git_pretty_log --all"
+  lr = "git_pretty_log -20"
+  lar = "git_pretty_log -20 --all"
+  spike = "git_spike"
+  wip = "git_wip"
+  pop = "git_pop_last_commit"
+  dc = diff --cached
+  d = diff
+  amend = commit --amend
+  a = add
+  aa = add --all
+  ai = add -i
+  churn = "git_churn"
+  cp = cherry-pick -n
+  x = "!/usr/bin/env gitx"
+  track = "git_track"
+[push]
+  # Only push branches that have been set up to track a remote branch.
+  default = current

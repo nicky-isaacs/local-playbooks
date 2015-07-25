@@ -1,0 +1,8 @@
+.DS_Store
+.bundle
+.vagrant
+db/*.sqlite3
+.idea
+.idea_modules
+*.iml
+.env
