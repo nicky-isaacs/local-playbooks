@@ -1,0 +1,21 @@
+---
+- name: install docker
+  homebrew: name=docker state=latest
+
+- name: install docker-compose
+  homebrew: name=docker-compose state=latest
+
+- name: install boot2docker
+  homebrew: name=boot2docker state=latest
+
+- name: tap caskroom/cask
+  homebrew_tap: name=caskroom/cask state=present
+
+- name: install brew-cask
+  homebrew: name=brew-cask state=latest
+
+- name: install vagrant
+  homebrew_cask: name=vagrant state=present
+
+- name: install virtualbox
+  homebrew_cask: name=virtualbox state=present
