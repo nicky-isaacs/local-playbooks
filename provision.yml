@@ -6,4 +6,5 @@
     - ansible
     - git
     - misc
+    - python
     - ruby
