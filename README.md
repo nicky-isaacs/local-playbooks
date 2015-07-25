@@ -17,7 +17,7 @@ To determine you have github ssh access right (e.g. keys):
 
 2) Check out the this repo:
 
-    $ git clone git@github.com:tendrilinc/ansible-osx-playbooks.git
+    $ git clone git@github.com:jsnrth/local-playbooks.git
 
 3) Provision the environemnt
 
