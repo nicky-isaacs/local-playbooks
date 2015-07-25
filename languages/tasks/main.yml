@@ -41,3 +41,14 @@
   with_items:
     - { src: '/usr/local/Cellar/ruby/2.2.2', dest: '~/.rbenv/versions/ruby-2.2.2' }
     - { src: '/usr/local/Cellar/ruby193/1.9.3-p551_1', dest: '~/.rbenv/versions/ruby-1.9.3' }
+
+- name: setup .zsh directory
+  file: path=~/.zsh state=directory recurse=yes
+
+- name: install language profiles
+  file: src={{item.src}} dest={{item.dest}} state=file
+  with_items:
+    - { src: 'bundler.zsh', dest: '~/.zsh/bundler.zsh' }
+    - { src: 'gem.zsh', dest: '~/.zsh/gem.zsh' }
+    - { src: 'groovy.zsh', dest: '~/.zsh/groovy.zsh' }
+    - { src: 'rbenv.zsh', dest: '~/.zsh/rbenv.zsh' }
