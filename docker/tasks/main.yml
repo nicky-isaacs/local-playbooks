@@ -19,3 +19,9 @@
 
 - name: install virtualbox
   homebrew_cask: name=virtualbox state=present
+
+- name: setup .zsh directory
+  file: path=~/.zsh state=directory recurse=yes
+
+- name: install docker profile configurations
+  copy: src=docker.zsh dest=~/.zsh/docker.zsh
