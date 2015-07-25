@@ -103,7 +103,7 @@ git_cwd_is_clean() {
     fi
 }
 
-git_pretty_log {
+git_pretty_log() {
     hash="%C(yellow)%h%C(reset)"
     who="%C(white)%an%C(reset)"
     when="%C(white)%ar%C(reset)"
@@ -123,7 +123,7 @@ git_pretty_log {
         less -FXRS
 }
 
-git_churn {
+git_churn() {
     set -e
     git log --all -M -C --name-only --format='format:' "$@" |
         sort |
