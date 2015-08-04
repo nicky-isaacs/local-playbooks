@@ -1,4 +1,7 @@
 ---
+- name: tap homebrew/versions
+  homebrew_tap: tap=homebrew/versions state=present
+
 - name: install languages
   homebrew: name={{item}} state=latest
   with_items:
@@ -10,6 +13,8 @@
     - lua
     - node
     - python
+    - ruby
+    - ruby193
     - rust
     - scala
 
@@ -21,10 +26,7 @@
     - maven
     - npm
 
-- name: tap homebrew/versions
-  homebrew_tap: tap=homebrew/versions state=present
-
-- name: install multiple rubies
+- name: unlink rubies
   homebrew: name={{item}} state=unlinked
   with_items:
     - ruby
