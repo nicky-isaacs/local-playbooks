@@ -21,6 +21,8 @@
     - leiningen
     - maven
     - npm
+    - sbt
+    - typesafe-activator
 
 - name: setup .zsh directory
   file: path=~/.zsh state=directory recurse=yes
