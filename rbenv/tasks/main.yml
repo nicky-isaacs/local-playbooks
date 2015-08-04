@@ -1,0 +1,33 @@
+---
+- name: tap homebrew/versions
+  homebrew_tap: tap=homebrew/versions state=present
+
+- name: install rubies
+  homebrew: name={{item}} state=latest
+  with_items:
+    - ruby
+    - ruby193
+
+- name: unlink rubies
+  homebrew: name={{item}} state=unlinked
+  with_items:
+    - ruby
+    - ruby193
+
+- name: install rbenv
+  homebrew: name=rbenv state=latest
+
+- name: setup .rbenv directory
+  file: path=~/.rbenv/versions state=directory recurse=yes
+
+- name: setup .rbenv rubies
+  file: src={{item.src}} dest={{item.dest}} state=link
+  with_items:
+    - { src: '/usr/local/Cellar/ruby/2.2.2', dest: '~/.rbenv/versions/2.2.2' }
+    - { src: '/usr/local/Cellar/ruby193/1.9.3-p551_1', dest: '~/.rbenv/versions/1.9.3' }
+
+- name: setup .zsh directory
+  file: path=~/.zsh state=directory recurse=yes
+
+- name: install rbenv profile configuration
+  copy: src=rbenv.zsh dest=~/.zsh/rbenv.zsh
