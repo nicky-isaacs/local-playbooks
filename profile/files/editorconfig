@@ -32,3 +32,10 @@ indent_style = tab
 
 [*.rs]
 indent_style = 4
+
+[*.java]
+indent_size = 4
+continuation_indent_size = 4
+
+[*.exs]
+indent_size = 2

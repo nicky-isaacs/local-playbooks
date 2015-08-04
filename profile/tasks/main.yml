@@ -1,6 +1,8 @@
 ---
 - name: setup .zsh directory
   file: path=~/.zsh state=directory recurse=yes
+  tags:
+    - profile
 
 - name: install shell configurations
   copy: src={{item.src}} dest={{item.dest}}
@@ -11,6 +13,8 @@
     - { src: "bash_profile", dest: "~/.bash_profile" }
     - { src: "misc.zsh", dest: "~/.zsh/misc.zsh" }
     - { src: "ssh.zsh", dest: "~/.zsh/ssh.zsh" }
+  tags:
+    - profile
 
 - name: install misc packages
   homebrew: name={{item}} state=latest
@@ -28,8 +32,14 @@
     - tmux
     - tree
     - wget
+  tags:
+    - profile
 
 - name: install profile configurations
   copy: src={{item.src}} dest={{item.dest}}
   with_items:
     - { src: "editorconfig", dest: "~/.editorconfig" }
+  tags:
+    - profile
+    - development
+    - editorconfig
