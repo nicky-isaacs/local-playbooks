@@ -9,31 +9,6 @@
   tags:
     - docker
 
-- name: install boot2docker
-  homebrew: name=boot2docker state=latest
-  tags:
-    - docker
-
-- name: tap caskroom/cask
-  homebrew_tap: name=caskroom/cask state=present
-  tags:
-    - docker
-
-- name: install brew-cask
-  homebrew: name=brew-cask state=latest
-  tags:
-    - docker
-
-- name: install vagrant
-  homebrew_cask: name=vagrant state=present
-  tags:
-    - docker
-
-- name: install virtualbox
-  homebrew_cask: name=virtualbox state=present
-  tags:
-    - docker
-
 - name: setup .zsh directory
   file: path=~/.zsh state=directory recurse=yes
   tags:
@@ -43,3 +18,38 @@
   copy: src=docker.zsh dest=~/.zsh/docker.zsh
   tags:
     - docker
+
+- name: install boot2docker
+  homebrew: name=boot2docker state=latest
+  tags:
+    - boot2docker
+
+- name: tap caskroom/cask
+  homebrew_tap: name=caskroom/cask state=present
+  tags:
+    - boot2docker
+
+- name: install brew-cask
+  homebrew: name=brew-cask state=latest
+  tags:
+    - boot2docker
+
+- name: install vagrant
+  homebrew_cask: name=vagrant state=present
+  tags:
+    - boot2docker
+
+- name: install virtualbox
+  homebrew_cask: name=virtualbox state=present
+  tags:
+    - boot2docker
+
+- name: initialize boot2docker
+  command: boot2docker init
+  tags:
+    - boot2docker
+
+- name: start boot2docker
+  command: boot2docker up --cpus=4 --memory=8192
+  tags:
+    - boot2docker
