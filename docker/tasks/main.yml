@@ -44,12 +44,22 @@
   tags:
     - boot2docker
 
+- name: check boot2docker status
+  shell: '/usr/local/bin/boot2docker status'
+  register: boot2docker_status
+  changed_when: False
+  ignore_errors: True
+  tags:
+    - boot2docker
+
 - name: initialize boot2docker
   command: boot2docker init
+  when: boot2docker_status.stdout.find('running') == -1
   tags:
     - boot2docker
 
 - name: start boot2docker
   command: boot2docker up --cpus=4 --memory=8192
+  when: boot2docker_status.stdout.find('running') == -1
   tags:
     - boot2docker
