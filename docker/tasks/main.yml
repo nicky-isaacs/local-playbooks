@@ -1,27 +1,45 @@
 ---
 - name: install docker
   homebrew: name=docker state=latest
+  tags:
+    - docker
 
 - name: install docker-compose
   homebrew: name=docker-compose state=latest
+  tags:
+    - docker
 
 - name: install boot2docker
   homebrew: name=boot2docker state=latest
+  tags:
+    - docker
 
 - name: tap caskroom/cask
   homebrew_tap: name=caskroom/cask state=present
+  tags:
+    - docker
 
 - name: install brew-cask
   homebrew: name=brew-cask state=latest
+  tags:
+    - docker
 
 - name: install vagrant
   homebrew_cask: name=vagrant state=present
+  tags:
+    - docker
 
 - name: install virtualbox
   homebrew_cask: name=virtualbox state=present
+  tags:
+    - docker
 
 - name: setup .zsh directory
   file: path=~/.zsh state=directory recurse=yes
+  tags:
+    - docker
 
 - name: install docker profile configurations
   copy: src=docker.zsh dest=~/.zsh/docker.zsh
+  tags:
+    - docker
