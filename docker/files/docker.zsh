@@ -10,6 +10,3 @@ docker-nuke-everything() {
     # Delete all images
     docker rmi $(docker images -q)
 }
-
-
-eval "$(boot2docker shellinit 2> /dev/null)"
