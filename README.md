@@ -7,18 +7,22 @@ This uses ansible, because it's awesome. It's also the easiest thing I've found 
 
 ## Usage
 
-1) Set up Github SSH keys: https://help.github.com/articles/generating-ssh-keys/
+First things first, you will have to clone the repo. This is probably going to drive you towards installing Xcode and the command line tools in order to make `git` available.
 
-To determine you have github ssh access right (e.g. keys):
+```bash
+$ git clone git@github.com:jsnrth/local-playbooks.git
+```
 
-    $ ssh -T git@github.com
+There are two scripts that do all the things.
 
-    Hi <your github username>! You've successfully authenticated, but GitHub does not provide shell access.
+`bootstrap.sh` will ensure the environment is ready to roll. It only needs to be run once -- it's a no op if everything is good to go.
 
-2) Check out the this repo:
+```bash
+$ ./bootstrap.sh
+```
 
-    $ git clone git@github.com:jsnrth/local-playbooks.git
+`provision.sh` is the thing that actually does the work. It's basically a wrapper around running `ansible-playbook`, and can/should be run often.
 
-3) Provision the environemnt
-
-    $ ./provision.sh
+```bash
+$ ./provision.sh
+```
