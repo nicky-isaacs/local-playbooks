@@ -91,7 +91,7 @@ highlight TrailingWhitespace ctermbg=red guibg=red
 match TrailingWhitespace /\s\+$/
 
 
-set cursorline
+" set cursorline
 
 set scrolloff=3
 

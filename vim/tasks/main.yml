@@ -3,6 +3,8 @@
   copy: src=vimrc dest=~/.vimrc
   tags:
     - vim
+    - vimrc
+    - profile
 
 - name: install vim directories
   file: path={{item}} state=directory recurse=yes
