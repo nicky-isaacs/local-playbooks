@@ -14,8 +14,8 @@
   tags:
     - jvm
 
-- name: install java
-  homebrew_cask: name=java state=present
+- name: install java8
+  homebrew_cask: name=java8 state=present
   tags:
     - jvm
 

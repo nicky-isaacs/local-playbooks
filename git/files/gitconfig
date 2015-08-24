@@ -1,12 +1,6 @@
 [user]
-  name='Jason'
-  email='jasonmichaelroth@gmail.com'
-[core]
-  excludesfile = ~/.gitignore
-  whitespace = trailing-space,space-before-tab
-  quotepath = false
-[apply]
-  whitespace = warn
+  name='Nick Isaacs'
+  email='nick@victorops.com'
 [color]
   branch = auto
   diff = auto
@@ -20,23 +14,13 @@
   co = checkout
   cob = checkout -b
   st = status --short --ignore-submodules
-  l = "!source ~/.zsh/git.zsh && git_pretty_log"
-  la = "!source ~/.zsh/git.zsh && git_pretty_log --all"
-  lr = "!source ~/.zsh/git.zsh && git_pretty_log -20"
-  lar = "!source ~/.zsh/git.zsh && git_pretty_log -20 --all"
-  spike = "!source ~/.zsh/git.zsh && git_spike"
-  wip = "!source ~/.zsh/git.zsh && git_wip"
-  pop = "!source ~/.zsh/git.zsh && git_pop_last_commit"
   dc = diff --cached
   d = diff
   amend = commit --amend
   a = add
   aa = add --all
   ai = add -i
-  churn = "!source ~/.zsh/git.zsh && git_churn"
   cp = cherry-pick -n
-  x = "!/usr/bin/env gitx"
-  track = "git_track"
 [push]
   # Only push branches that have been set up to track a remote branch.
   default = current
