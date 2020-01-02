@@ -1,0 +1,8 @@
+- name: Install vs code
+  homebrew_cask:
+    name:
+      - visual-studio-code
+    install_options: force
+
+- name: Install vs code extensions
+  command: code --install-extension k--kato.intellij-idea-keybindings

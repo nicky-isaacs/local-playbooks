@@ -6,15 +6,20 @@
 - name: Install packages
   homebrew:
     name:
+      - awscli
       - jq
       - git
+      - wget
 
 - name: Install cask packages
   homebrew_cask:
     name:
+      - alfred
       - atom
       - firefox
+      - docker
       - google-chrome
       - macvim
       - visual-studio-code
+      - intellij-idea-ce
     install_options: force

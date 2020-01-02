@@ -1,5 +1,11 @@
-- name: Install nvm
-  homebrew: name=nvm
+- name: Install node packages
+  homebrew:
+    name:
+      - nvm
+      - yarn
+      - npm
 
-- name: Install yarn
-  homebrew: name=yarn
+- name: Install yarn global packages
+  yarn:
+    name: serverless
+    global: yes
