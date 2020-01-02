@@ -1,5 +1,5 @@
 - name: Install nvm
   homebrew: name=nvm
 
-- name: copy nvm functions
-  copy: src=nvm.zsh dest=~/.zsh/nvm.zsh
+- name: Install yarn
+  homebrew: name=yarn

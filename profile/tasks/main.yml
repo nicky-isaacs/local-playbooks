@@ -2,3 +2,19 @@
   copy: src={{item.src}} dest={{item.dest}}
   with_items:
     - { src: "zshrc", dest: "~/.zshrc" }
+
+- name: Install packages
+  homebrew:
+    name:
+      - jq
+      - git
+
+- name: Install cask packages
+  homebrew_cask:
+    name:
+      - atom
+      - firefox
+      - google-chrome
+      - macvim
+      - visual-studio-code
+    install_options: force

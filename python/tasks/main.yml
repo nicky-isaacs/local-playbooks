@@ -1,0 +1,2 @@
+- name: Install anaconda
+  homebrew_cask: name=anaconda

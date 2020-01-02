@@ -1,7 +1,7 @@
----
-- name: Provision All The Things
+- name: Provision everything
   hosts: localhost
   connection: local
   roles:
     - profile
     - node
+    - python
