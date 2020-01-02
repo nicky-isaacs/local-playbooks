@@ -1,6 +1,0 @@
----
-- name: install/update ansible
-  homebrew: name=ansible state=latest
-
-- name: install ansible.cfg
-  copy: src=ansible.cfg dest=~/.ansible.cfg
