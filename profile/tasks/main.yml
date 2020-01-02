@@ -35,6 +35,3 @@
   copy: src={{item.src}} dest={{item.dest}}
   with_items:
     - { src: "com.googlecode.iterm2.plist", dest: "~/Library/Preferences/com.googlecode.iterm2.plist" }
-
-- name: install 1password 6
-  command: mas install 443987910
