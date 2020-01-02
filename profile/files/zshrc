@@ -136,3 +136,10 @@ export NVM_DIR="$HOME/.nvm"
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/nisaacs/workspace/dialed/dialedai-api/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/nisaacs/workspace/dialed/dialedai-api/node_modules/tabtab/.completions/slss.zsh
+
+# JVM
+java_version() {
+    version=$1
+    echo "Switching to java version $version"
+    export JAVA_HOME=`/usr/libexec/java_home -v $version`
+}

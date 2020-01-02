@@ -7,7 +7,10 @@
   homebrew:
     name:
       - awscli
+      - autojump
       - jq
+      - scala
+      - sbt
       - git
       - wget
 
@@ -16,6 +19,7 @@
     name:
       - alfred
       - atom
+      - iterm2
       - firefox
       - docker
       - google-chrome
@@ -23,3 +27,8 @@
       - visual-studio-code
       - intellij-idea-ce
     install_options: force
+
+- name: install iterm2  configurations
+  copy: src={{item.src}} dest={{item.dest}}
+  with_items:
+    - { src: "com.googlecode.iterm2.plist", dest: "~/Library/Preferences/com.googlecode.iterm2.plist" }

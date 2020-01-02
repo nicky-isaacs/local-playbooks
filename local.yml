@@ -3,6 +3,8 @@
   connection: local
   roles:
     - profile
+    - jvm
     - node
+    - golang
     - python
     - vs-code
