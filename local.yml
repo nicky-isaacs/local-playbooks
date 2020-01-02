@@ -1,0 +1,7 @@
+---
+- name: Provision All The Things
+  hosts: localhost
+  connection: local
+  roles:
+    - profile
+    - node
