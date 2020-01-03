@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-ansible-playbook local.yml $@
+caffinate -s ansible-playbook local.yml $@

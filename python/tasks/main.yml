@@ -1,5 +1,2 @@
 - name: Install anaconda
   homebrew_cask: name=anaconda
-  
-- name: Install Python 3.8.0
-  command: conda install python=3.8.0

@@ -1,9 +1,13 @@
+- name: tap jdk
+  homebrew_tap:
+   name: adoptopenjdk/openjdk
+
 - name: install java
   homebrew_cask:
     name:
-      - java8
-      - java11
       - oracle-jdk
+      - adoptopenjdk13
+      - adoptopenjdk8
     state: present
   tags:
     - jvm

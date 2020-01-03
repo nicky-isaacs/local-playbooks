@@ -1,3 +1,17 @@
+- name: install oh-my-zsh
+  shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  register: ohmyzsh
+  failed_when:
+    - "'Oh My Zsh installed' not in ohmyzsh.stdout"
+
+- name: set zsh
+  command: chsh -s /usr/local/bin/zsh
+  register: chsh_result
+  failed_when:
+    - chsh_result.rc != 1
+    - chsh_result.rc != 0
+    - chsh_result.rc != 127
+
 - name: install shell configurations
   copy: src={{item.src}} dest={{item.dest}} backup=yes
   with_items:
@@ -27,6 +41,8 @@
       - visual-studio-code
       - intellij-idea-ce
       - plex
+      - skitch
+      - slack
       - spotify
     install_options: force
 
@@ -35,8 +51,3 @@
   with_items:
     - { src: "com.googlecode.iterm2.plist", dest: "~/Library/Preferences/com.googlecode.iterm2.plist" }
 
-- name: set zsh
-  command: chsh -s /usr/local/bin/zsh
-
-- name: install oh-my-zsh
-  command: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
