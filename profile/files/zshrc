@@ -95,9 +95,6 @@ export PYTHONSTARTUP=~/.pythonrc
 
 alias vi=mvim
 
-# Use java8
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_162`
-
 # Exercism short cut
 if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
   . ~/.config/exercism/exercism_completion.zsh
@@ -143,3 +140,6 @@ java_version() {
     echo "Switching to java version $version"
     export JAVA_HOME=`/usr/libexec/java_home -v $version`
 }
+
+# Use java 8
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
